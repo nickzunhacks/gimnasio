@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "montserrat";
+    src: url("../Montserrat/static/Montserrat-ExtraLight.ttf")  format("truetype");
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "NickzunLetras";
+    src: url("../Montserrat/static/Montserrat-Regular.ttf")  format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "NickzunLetras";
+    src: url("../Montserrat/static/Montserrat-Bold.ttf")  format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "NickzunLetras";
+    src: url("../Montserrat/static/Montserrat-ExtraBold.ttf")  format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "NickzunLetras";
+    src: url("../Montserrat/static/Montserrat-Black.ttf")  format("truetype");
+    font-weight: 900;
+}

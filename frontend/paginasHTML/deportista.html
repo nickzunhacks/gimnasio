@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deportista</title>
+    <link rel="stylesheet" href="styles/deportista.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+</head>
+<body>
+
+    <div class="contenedorBienvenida">
+        <h1 id="bienvenida">Bienvenido Deportista</h1>
+    </div>
+    
+    <div class="contenedorNombreRutina">
+        <h1 id="nombreRutinaDia">Rutina [dia]</h1>
+    </div>
+
+    <div id="rutinaContainer"></div>
+
+    <template id="plantilla-ejercicio">
+        <div class="card">
+            <h3 class="nombre-ejercicio"></h3>
+            
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/TAH8RxOS0VI?si=nA-pVKHLVJH8B4go"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        
+            <div class="data">
+                <div class="item">Peso<span class="peso"></span></div>
+                <div class="item">Reps<span class="reps"></span></div>
+                <div class="item">Series<span class="series"></span></div>
+                <div class="item">Descanso<span class="descanso"></span></div>
+            </div>
+        </div>
+    </template>
+
+    <button class="rutinaSemanal" id="rutinaSemanal">Ver rutina semanal</button>
+
+    <script src="scripts/deportista.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+body, html{
+
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+
+}
+
+body {
+
+    background: 
+        linear-gradient(rgba(0, 57, 132, 0.50), rgba(0, 35, 82, 0.50)), 
+        url('../imagenes/img/fonodoGYM.jpg');
+        background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h1{
+
+    padding: 10px;
+    border-radius: 40px;
+    color: white;
+    font-family: 'montserrat';
+    font-size: 50px;
+    font-weight: 900;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+
+
+}
+
+.titulo {
+
+    height: 100px;
+    background: linear-gradient(rgb(0, 87, 139), rgb(1, 128, 201));
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.formulario-log-in{
+
+    height: auto;
+    width: auto;
+    background: linear-gradient(rgba(220, 185, 69, 0.95), rgba(241, 212, 110, 0.85));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 30px;
+    margin: auto;
+    border-radius: 40px;
+
+}
+
+.contenedores {
+
+    display: flex;
+    align-items: center;
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-sizing: border-box; 
+    padding: 0 10px;
+
+}
+
+
+.icono {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;            
+}
+
+
+.datos{
+
+    font-family: 'montserrat';
+    font-weight: 700;
+    width: 300px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-sizing: border-box; 
+    outline: none;
+
+}
+
+.boton-enviar{
+
+    width: 150px;
+    margin: 30px;
+    letter-spacing: 3px;
+    background: rgb(0, 87, 139);
+    color: white;
+    cursor: pointer;
+
+}
+
+.boton-enviar:focus {
+
+    border-color: rgb(0, 87, 139);
+
+}
+
+.contenedores:focus-within {
+
+    border: 2px solid rgb(0, 87, 139);
+    outline: none;
+
+}
+
+.inputs {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 100px;
+
+}
+
+.irRegistro { 
+
+    font-family: montserrat;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}

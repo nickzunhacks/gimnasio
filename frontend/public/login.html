@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IniciarSesion</title>
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/fonts.css"
+</head>
+<body>
+
+    
+
+    <form class="formulario-log-in" name="datosFormularioLogIn">
+
+        <div class="titulo"> <h1>Iniciar Sesion</h1> </div>
+
+        <div class="inputs">
+
+            <div class="usuario contenedores">
+                <img src="imagenes/iconos/user.png" alt="usuario" class="icono">
+                <input type="text" name="usuario" class="datos" placeholder="usuario" required autofocus>
+            </div>
+
+            <div class="contrasena contenedores">
+                <img src="imagenes/iconos/contrasenaIcono.png" alt="contrasena" class="icono">
+                <input type="text" name="contrasena" class="datos" placeholder="contraseña" required>
+            </div>
+
+            <button type="submit" class="datos boton-enviar">continuar</button>
+
+        </div>
+
+        <div class="irRegistro">
+                <p>¿no tienes cuenta?</p>
+                <a href="/registro">Haz click aqui</a>
+        </div>
+
+    </form>
+
+    <script src="scripts/funcionalidadLogIn.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+body, html{
+
+    height: auto;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    background-color: #dfdfdf;
+
+}
+
+h1,h2, h3, p {
+
+    font-family: 'montserrat';
+
+}
+
+h1{ font-weight: 900; }
+h2{ font-weight: 700; }
+h1{ font-weight: 500; }
+h1{ font-weight: 100; }
+
+.contenedorBienvenida {
+
+    align-self: flex-start;
+    text-align: left;
+    padding: 15px 30px;
+    margin: 50px;
+    color: white;
+    background-color: #004aad;
+    border-radius: 100px;
+    height: auto;
+    width: auto;
+    text-align: left;
+
+}
+
+.contenedorNombreRutina {
+
+    align-self: flex-start;
+    align-self: center;
+    padding: 0 30px;
+    margin: 50px;
+    color: white;
+    background-color: #004aad;
+    border-radius: 30px;
+    height: auto;
+    width: auto;
+    text-align: left;
+
+}
+
+.titulo {
+    
+    text-align: center;
+    color: #004aad;
+    font-weight: bold;
+    font-family: 'montserrat';
+
+}
+
+.card {
+
+    display: flex;
+    flex-direction: column;
+    background-color: #004aad;
+    width: 90%; 
+    border-radius: 20px;
+    color: white;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    align-items: center;
+
+}
+
+.video-container {
+    background-color: black;
+    height: 500px;
+    width: 70%;
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.data {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+    margin-top: 10px;
+    font-family: 'montserrat';
+    font-weight: 500;
+}
+
+.item {
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item span {
+    background-color: #d4af37;
+    color: white;
+    border-radius: 50%;
+    width: 45px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+#rutinaContainer {
+
+    background-color: #dcb945;
+    align-self: center;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 90%;
+    box-sizing: border-box;
+
+}
+
+.rutinaSemanal { 
+
+    align-self: flex-start;
+    align-self: center; 
+    margin: 50px;
+    background-color: #dcb945;
+    border-color: #dcb945;
+    font-family: 'montserrat';
+    font-weight: 900;
+    color: #004aad;
+    height: 50px;
+    width: 500px;
+    border-radius: 30px;
+    cursor: pointer;
+
+}
+
+.video-container iframe {
+    width: 80%;
+    height: 80%;
+    border: none;
+    border-radius: 25px;
+    object-fit: cover;       
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/fonts.css"
+</head>
+<body>
+
+    
+
+    <form class="formulario-log-in" name="datosFormulario">
+
+        <div class="titulo  "> <h1>Registrarse</h1> </div>
+
+        <div class="inputs">
+
+            <div class="usuario contenedores">
+                <img src="imagenes/iconos/user.png" alt="usuario" class="icono">
+                <input type="text" class="datos" placeholder="crea tu nombre de usuario" required autofocus>
+            </div>
+
+            <div class="correo contenedores">
+                <img src="imagenes/iconos/mail.png" alt="correo" class="icono">
+                <input type="email" class="datos" placeholder="introduce tu correo" required>
+            </div>
+
+            <div class="codigo contenedores">
+                <img src="imagenes/iconos/codigo.png" alt="codigo" class="icono">
+                <input type="text" class="datos" placeholder="codigo de la universidad" required>
+            </div>
+
+            <div class="contrasena contenedores">
+                <img src="imagenes/iconos/contrasenaIcono.png" alt="contrasena" class="icono">
+                <input type="text" class="datos" placeholder="crea tu contraseña" required>
+            </div>
+            
+        </div>
+
+        <button type="submit" class="datos boton-enviar">continuar</button>
+
+
+        <div class="irRegistro">
+                <p>¿ya tienes cuenta?</p>
+                <a href="/login">Haz click aqui</a>
+        </div>
+
+        
+    </form>
+
+    <script src="scripts/funcionalidadRegistro.js"></script>
+
+</body>
+</html>

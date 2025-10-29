@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrenador</title>
+    <link rel="stylesheet" href="styles/entrenador.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+</head>
+<body>
+
+    <div class="bienvenida-contenedor">
+        <h1 id="BienvenidaEntrenador">Bienvenido Entrenador</h1>        
+    </div>
+
+    <form class="formulario-buscador">
+
+        <div class="buscador-contenedor">
+            <img src="imagenes/iconos/buscar.png" alt="contrasena" class="icono">
+            <input type="number" class="buscador" placeholder="introduce el codigo del deportista" required>
+            <button type="submit">buscar</button>
+        </div>  
+
+    </form>
+
+    <div id="resultados-contenedor"></div>
+
+    <template id="plantilla-resultados">
+
+        <button id="boton-resultado"></button>
+
+    </template>
+
+    <script src="scripts/entrenador.js"></script>
+
+</body>
+</html>
