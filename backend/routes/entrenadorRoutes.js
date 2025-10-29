@@ -8,7 +8,7 @@ router.get('/buscar_usuario', (req, res) => {
 
     const patron = `%${codigo}%`;
 
-    const query = 'SELECT name, code FROM users WHERE CAST(code AS CHAR) LIKE ?';
+    const query = "SELECT name, code FROM users WHERE CAST(code AS CHAR) LIKE ? AND rol = 'deportista' ";
 
     connection.query(query, [patron], (err, results) => {
     if (err) { 

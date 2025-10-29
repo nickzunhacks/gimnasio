@@ -5,8 +5,18 @@ function resultadosBuscador(resultados) {
 
     const clon = plantilla.content.cloneNode(true);
     
-    clon.getElementById("boton-resultado").content = `${resultados.code} - ${resultados.nombre}`;
-    
+    const boton = clon.querySelector("#boton-resultado");
+
+  // Asigna el texto correcto
+    boton.textContent = `${resultados.code} - ${resultados.name}`;
+    boton.name = resultados.code;
+
+    boton.addEventListener("click", () => {
+
+        window.location.href = "/rutinaSemanal"
+
+    });
+
     resultadosContainer.appendChild(clon);
 
 }
@@ -21,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
 async function resultadosBusqueda(event) {
     
     event.preventDefault();
+
+    const resultadosContainer = document.getElementById("resultados-contenedor");
+    resultadosContainer.innerHTML = "";
 
     const formulario = document.querySelector(".formulario-buscador");
     const busqueda = formulario.elements[0].value;

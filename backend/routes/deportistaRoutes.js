@@ -12,9 +12,12 @@ router.get('/api/usuario', (req, res) => {
 router.get('/rutina_dia', (req, res) => {
 
     const dia = req.query.dia;
-    const codigoUsuario = req.session.user.code
+    const codigoUsuario = req.session.user.code;
+    const rol = req.session.user.rol
+
     console.log("dia: ",dia);
     console.log("codigo usuario: ",codigoUsuario);
+    console.log("rol: ", rol);
 
     const query = `SELECT 
 
