@@ -1,6 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const connection = require('../db');
+const session = require('express-session');
 const router = express.Router();
 
 router.post('/registrar', async (req, res) => {
@@ -44,6 +45,16 @@ router.post('/login', async (req, res) => {
 
         res.json({message: 'Inicio de sesión exitoso', usuario: req.session.user });
     });
+});
+
+router.get("/session_rol", (req, res) => {
+
+    if(!req.session.user) {
+        return res.status(401).json({ error: "No existe una sesion activa"});
+    }
+    
+    res.json({rol: req.session.user.rol });
+
 });
 
 module.exports = router;

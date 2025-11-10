@@ -156,3 +156,15 @@ h1{ font-weight: 100; }
     border-radius: 25px;
     object-fit: cover;       
 }
+
+.boton-entrenador {
+
+    align-self: flex-end;
+    font-family: 'montserrat';
+    font-weight: 700;
+    border-radius: 10px;
+    border-color: black;
+    cursor: pointer;
+    visibility: hidden;
+
+}

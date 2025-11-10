@@ -12,8 +12,14 @@ router.get('/api/usuario', (req, res) => {
 router.get('/rutina_dia', (req, res) => {
 
     const dia = req.query.dia;
-    const codigoUsuario = req.session.user.code;
     const rol = req.session.user.rol
+    let codigoUsuario = null
+
+    if (rol === "entrenador") {
+        codigoUsuario = req.query.codigo 
+    } else {
+        codigoUsuario = req.session.user.code;
+    }
 
     console.log("dia: ",dia);
     console.log("codigo usuario: ",codigoUsuario);

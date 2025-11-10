@@ -19,11 +19,11 @@ router.get('/entrenador', isAuthenticated, isRole('entrenador'), (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/paginasHTML', 'entrenador.html'));
 });
 
-router.get('/deportista', isAuthenticated, isRole('deportista'), (req, res) => {
+router.get('/deportista', isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/paginasHTML', 'deportista.html'));
 });
 
-router.get('/rutina_semanal', isAuthenticated, isRole('deportista'), (req, res) => {
+router.get('/rutina_semanal', isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/paginasHTML', 'rutinaSemanal.html'));
 });
 

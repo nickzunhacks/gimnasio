@@ -13,7 +13,7 @@ function resultadosBuscador(resultados) {
 
     boton.addEventListener("click", () => {
 
-        window.location.href = "/rutinaSemanal"
+        window.location.href = `/rutina_semanal?codigo=${resultados.code}`
 
     });
 

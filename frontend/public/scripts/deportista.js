@@ -1,12 +1,38 @@
+let rolCache = null;
+
+async function rol() {
+
+    if (rolCache) return rolCache;
+
+    const response = await fetch(`http://localhost:3000/session_rol`, {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'},
+    });
+
+    const dato = await response.json();
+    rolCache = dato.rol; 
+    return rolCache;
+
+}
+
 // Función para crear una tarjeta desde la plantilla
 
-function crearTarjeta(ejercicio) {
+async function crearTarjeta(ejercicio) {
 
     const rutinaContainer = document.getElementById("rutinaContainer");
     const plantilla = document.getElementById("plantilla-ejercicio");
 
     const clon = plantilla.content.cloneNode(true);
     
+    const rol_usuario = await rol();
+
+    console.log(rol_usuario);
+
+    if(rol_usuario === "entrenador") {
+        clon.querySelector("#editar").style.visibility = "visible";
+        clon.querySelector("#eliminar").style.visibility = "visible";
+    }
+
     clon.querySelector(".video-container iframe").src = ejercicio.url_formateada;
     clon.querySelector(".nombre-ejercicio").textContent = ejercicio.nombre;
     clon.querySelector(".peso").textContent = ejercicio.peso;
@@ -34,14 +60,28 @@ async function obtenerRutina() {
     try {
 
         const dia = diaSeleccionado();
+        const rol_usuario = await rol();
+        let respuesta;
 
-        const respuesta = await fetch(`http://localhost:3000/rutina_dia?dia=${dia}`, {
-    
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'},
+        if (rol_usuario === "entrenador"){
 
+            const parametros = new URLSearchParams(window.location.search);
+            const codigo = parametros.get('codigo')
 
-        });
+            respuesta = await fetch(`http://localhost:3000/rutina_dia?dia=${dia}&codigo=${codigo}`, {
+                method: 'GET',
+                headers: {'Content-Type': 'application/json'},
+                credentials: 'include'
+            });
+
+        } else {
+
+            respuesta = await fetch(`http://localhost:3000/rutina_dia?dia=${dia}`, {
+                method: 'GET',
+                headers: {'Content-Type': 'application/json'},
+            });
+
+        }
 
         if (!respuesta.ok)
             throw new Error(`Error al obtener rutina: ${respuesta.status}`);
@@ -63,7 +103,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try{
 
-        const response = await fetch('/api/usuario');
+        const response = await fetch('/api/usuario', {
+            method: 'GET',
+            credentials: 'include'
+        });     
 
         if(!response.ok) {
             window.location.href = '/login';
@@ -101,8 +144,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const botonRutinaSemanal = document.getElementById("rutinaSemanal")
 
-    botonRutinaSemanal.addEventListener("click", () => {
-        window.location.href = "/rutina_semanal";
+    botonRutinaSemanal.addEventListener("click", async () => {
+
+        const rol_usuario = await rol();
+
+        if(rol_usuario === "entrenador") {
+
+            const param = new URLSearchParams(window.location.search);
+            const codigo = param.get('codigo');
+            window.location.href = `/rutina_semanal?codigo=${codigo}`
+
+        } else {
+
+            window.location.href = "/rutina_semanal";
+
+        }
+
     });
 
 });
