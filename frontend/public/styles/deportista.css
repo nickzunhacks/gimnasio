@@ -168,3 +168,10 @@ h1{ font-weight: 100; }
     visibility: hidden;
 
 }
+
+.contendeorNombreDeportista {
+
+    align-self: center;
+    color: black;
+
+}

@@ -36,7 +36,7 @@ router.get('/rutina_dia', (req, res) => {
 
         FROM rutina_ejercicio
         JOIN ejercicios ON rutina_ejercicio.id_ejercicio = ejercicios.id_ejercicio
-        JOIN rutina ON rutina.id_ruitna = rutina_ejercicio.id_ruitna AND rutina.id_deportista = ?
+        JOIN rutina ON rutina.id_rutina = rutina_ejercicio.id_rutina AND rutina.id_deportista = ?
         WHERE rutina.dia = ?`
 
         connection.query(query, [codigoUsuario, dia], (err, results) => {

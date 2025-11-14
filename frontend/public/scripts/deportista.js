@@ -1,5 +1,9 @@
 let rolCache = null;
 
+const parametros = new URLSearchParams(window.location.search);
+const codigo = parametros.get('codigo')
+const dia = parametros.get('dia');
+
 async function rol() {
 
     if (rolCache) return rolCache;
@@ -31,6 +35,15 @@ async function crearTarjeta(ejercicio) {
     if(rol_usuario === "entrenador") {
         clon.querySelector("#editar").style.visibility = "visible";
         clon.querySelector("#eliminar").style.visibility = "visible";
+
+        const editar = clon.querySelector("#editar");
+
+        editar.addEventListener("click", () => {
+
+            window.location.href = `/editar_ejercicio?ejercicio=${ejercicio.nombre}&codigo=${codigo}&dia=${dia}`;
+
+        });
+
     }
 
     clon.querySelector(".video-container iframe").src = ejercicio.url_formateada;
@@ -44,29 +57,16 @@ async function crearTarjeta(ejercicio) {
 
 }
 
-// obtener el dia en el que el usuario decidio clickear en la pagina anterior
-
-function diaSeleccionado() {
-
-    const parametros = new URLSearchParams(window.location.search);
-    return parametros.get('dia');
-
-};
-
 //funcion donde se obtienen la rutina del dia seleccionado 
 
 async function obtenerRutina() {
 
     try {
 
-        const dia = diaSeleccionado();
         const rol_usuario = await rol();
         let respuesta;
 
         if (rol_usuario === "entrenador"){
-
-            const parametros = new URLSearchParams(window.location.search);
-            const codigo = parametros.get('codigo')
 
             respuesta = await fetch(`http://localhost:3000/rutina_dia?dia=${dia}&codigo=${codigo}`, {
                 method: 'GET',
@@ -116,8 +116,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const usuario = await response.json();
 
         document.getElementById('bienvenida').textContent = `Bienvenido, ${usuario.nombre}`;
-
-        const dia = diaSeleccionado();
 
         document.getElementById('nombreRutinaDia').textContent = `rutina del ${dia}`;
 

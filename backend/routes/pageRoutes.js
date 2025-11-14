@@ -27,4 +27,8 @@ router.get('/rutina_semanal', isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/paginasHTML', 'rutinaSemanal.html'));
 });
 
+router.get('/editar_ejercicio', isAuthenticated, isRole('entrenador'), (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/paginasHTML', 'editarEjercicio.html'));
+});
+
 module.exports = router;
