@@ -41,7 +41,7 @@ body, html {
 }
 
 /* Botones */
-.contenedor-dias button {
+button {
     background-color: #004aad;
     font-family: 'montserrat';
     color: white;
@@ -58,7 +58,7 @@ body, html {
 
 }
 
-.contenedor-dias button:hover {
+button:hover {
     background-color: #003680;
     transform: scale(1.05);
 }

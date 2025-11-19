@@ -175,3 +175,24 @@ h1{ font-weight: 100; }
     color: black;
 
 }
+
+#agregar {
+
+    align-self: center;
+    background-color: white;
+    width: 250px;
+    height: 70px;
+    border: none;
+    border-radius: 50px;
+
+}   
+
+#agregar:hover{
+
+    background-color: black;
+    color: white;
+    filter: blur(0.5px);
+    transform: scale(1.05);
+    cursor: pointer;
+
+}

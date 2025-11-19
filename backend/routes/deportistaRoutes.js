@@ -43,12 +43,13 @@ router.get('/rutina_dia', (req, res) => {
 
             if (err) { 
 
-                console.log("error al obtener rutina: ", err);
+                console.log("error al obtener rutina: ", err.message);
                 res.status(500).json({ error: 'Error al obtener la rutina de este dia'});
                 return;
 
             }
 
+            console.log(results);
             res.json(results)
 
         });

@@ -26,6 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const formulario = document.querySelector(".formulario-buscador");   
     formulario.addEventListener('submit', resultadosBusqueda);
 
+    const salir = document.querySelector('#salir');
+
+    salir.addEventListener("click", () => {
+        window.location.href = '/login';
+    });
+
 });
 
 async function resultadosBusqueda(event) {

@@ -14,4 +14,29 @@ function isRole(role) {
     };
 }
 
-module.exports = { isAuthenticated, isRole };
+function cerrarSesion(req, res, next) {
+
+    console.log("cerrarSesion ejecutado. User:", req.session?.user);
+
+    if(!req.session.user) {
+
+        return next();
+
+    }
+
+    req.session.destroy(err => {
+
+        if(err) {
+
+            console.log("erro destruyendo la sesion: ", err);
+
+        }
+
+        res.clearCookie("connect.sid");
+        return next();
+
+    });
+
+}
+
+module.exports = { isAuthenticated, isRole, cerrarSesion };

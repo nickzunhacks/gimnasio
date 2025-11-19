@@ -19,6 +19,74 @@ async function rol() {
 
 }
 
+// se obtiene el id del ejercicio con el nombre del ejercicio
+
+async function idEjercicio(ejercicio) {
+    
+    try{
+
+
+        const response = await fetch(`http://localhost:3000/id_ejercicio?nombre=${ejercicio}`,{
+
+            method: "GET",
+            headers: {'Content-Type': 'application/json'},
+
+        });
+
+        const resultado = await response.json();
+
+        if(response.ok) {
+
+            return resultado.id_ejercicio;
+
+        } else {
+
+            console.log(resultado.message); 
+
+        }
+    
+    } catch(err) {
+
+        console.log("Error: ",err.message);
+
+    }
+
+}
+
+// se obtiene idrutina por codigo del deportista y el dia de la rutina
+
+async function idRutina(codigo, dia) {
+    
+    try{
+
+
+        const response = await fetch(`http://localhost:3000/id_rutina?codigo=${codigo}&dia=${dia}`,{
+
+            method: "GET",
+            headers: {'Content-Type': 'application/json'},
+
+        });
+
+        const resultado = await response.json();
+
+        if(response.ok) {
+
+            return resultado.id_rutina;
+
+        } else {
+
+            console.log(resultado.message); 
+
+        }
+    
+    } catch(err) {
+
+        console.log("Error: ",err);
+
+    }
+
+}
+
 // Función para crear una tarjeta desde la plantilla
 
 async function crearTarjeta(ejercicio) {
@@ -32,11 +100,17 @@ async function crearTarjeta(ejercicio) {
 
     console.log(rol_usuario);
 
+    // si es entrenador, se hace accesible el boton de edita
+
     if(rol_usuario === "entrenador") {
+
         clon.querySelector("#editar").style.visibility = "visible";
         clon.querySelector("#eliminar").style.visibility = "visible";
 
         const editar = clon.querySelector("#editar");
+        const eliminar = clon.querySelector("#eliminar");
+
+        // boton de editar lleva a la pestaña de edicion del ejercicio especifico
 
         editar.addEventListener("click", () => {
 
@@ -44,7 +118,43 @@ async function crearTarjeta(ejercicio) {
 
         });
 
+        // elimina el ejercicio en el cual esta el boton
+
+        eliminar.addEventListener("click", async() => {
+
+            const IDrutina = await idRutina(codigo, dia);
+            const IDejercicio = await idEjercicio(ejercicio.nombre);
+
+            try {
+                
+            const response = await fetch(`http://localhost:3000/eliminar?rutina=${IDrutina}&ejercicio=${IDejercicio}`,{
+                    method: 'DELETE',      
+                    headers: {'Content-Type': 'application/json'},
+                });
+
+            if(!response.ok) {
+                
+                throw new Error("error al eliminar rutina");
+
+            }
+
+            const resultados = await response.json();
+
+            console.log(resultados.message);
+            alert("ejercicio eliminado");
+            location.reload();
+
+            } catch (err) {
+
+                console.log("error: ",err);
+
+            }
+
+            });
+
     }
+
+    // en cada ejercicio, se le agrega video, titulo, peso, reps, serie y descanso de cada ejercicio rescatado segun el dia 
 
     clon.querySelector(".video-container iframe").src = ejercicio.url_formateada;
     clon.querySelector(".nombre-ejercicio").textContent = ejercicio.nombre;
@@ -57,7 +167,7 @@ async function crearTarjeta(ejercicio) {
 
 }
 
-//funcion donde se obtienen la rutina del dia seleccionado 
+//funcion donde se obtienen los ejercicios del dia seleccionado 
 
 async function obtenerRutina() {
 
@@ -159,6 +269,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     });
+
+});
+
+document.addEventListener("DOMContentLoaded", async() => {
+
+    const rol_usuario = await rol();
+    const agregar = document.querySelector("#agregar");
+
+    agregar.addEventListener("click", () => {
+        window.location.href = `/agregar?codigo=${codigo}&dia=${dia}`;
+    });
+
+    if(rol_usuario === "entrenador") {
+        document.querySelector("#agregar").style.visibility = "visible";
+    }
+
 
 });
 

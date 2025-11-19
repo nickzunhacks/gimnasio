@@ -29,13 +29,13 @@ async function idEjercicio(ejercicio) {
     
     } catch(err) {
 
-        console.log("Error: ",err);
+        console.log("Error: ",err.message);
 
     }
 
 }
 
-async function idRutina() {
+async function idRutina(codigo, dia) {
     
     try{
 
@@ -83,7 +83,7 @@ async function editar(event) {
     const formulario = document.querySelector("#variables");
 
     const Ejercicio = await idEjercicio(ejercicio); 
-    const Rutina = await idRutina();
+    const Rutina = await idRutina(codigo, dia);
 
     const datos = {
 
