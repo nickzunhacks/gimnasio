@@ -19,7 +19,8 @@ body {
     padding: 15px 40px;
     text-align: center;
     display: inline-block;
-    margin-right: 900px;
+    margin-left: 100px;
+    margin-right: 700px;
     margin-top: 50px;
 }
 
@@ -78,6 +79,36 @@ button:hover {
     background-color: #003a8d;
 }
 
+#cantidadCrear {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    width: auto;  
+    background-color:#004aad;
+    border-radius: 50px;
+    padding: 10px;
+    color: #ffffff;
+    gap: 3px;
+
+}
+
+#tituloCantidad {
+
+    font-weight: 100;
+    font-size: small;
+
+}
+
+#cantidad {
+
+    border: none;
+    border-radius: 50px;
+    width: 70px;
+    height: 30px;
+
+}
+
 #salir {
 
     width: 200px;
@@ -110,5 +141,24 @@ button:hover {
 }
 
 #boton-resultado:hover {
-    background-color: #003a8d;
+    background-color: #003a8d;
+}
+
+#tituloDatos {
+
+    display: flex;
+    align-items: center;
+
+}
+
+#datos {
+
+    margin-right: 300px;
+    font-weight: 900;
+    color: white;
+    background-color: #d6b436;
+    width: auto;
+    padding: 10px 30px;
+    border-radius: 50px;
+
 }

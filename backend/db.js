@@ -3,7 +3,7 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
     host: 'basededatosgym.mysql.database.azure.com',
     user: 'NicoAdmin',
-    password: 'Blacky0203',
+    password: 'Lori0203',
     database: 'basededatosgym',
     port: 3306,
 

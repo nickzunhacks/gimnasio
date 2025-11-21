@@ -1,6 +1,35 @@
 const express = require('express');
 const connection = require('../db');
 const router = express.Router();
+const { faker } = require("@faker-js/faker");
+
+router.get('/crearUsuarios', (req,res) => {
+
+    const cantidad = req.query.cantidad;
+    const busqueda = req.query.busqueda;
+
+    const listaDeportistas = [];
+
+// Simulamos las coincidencias de la busqueda con busqueda mas numero de 1000 a 9999 n=cantidad de veces
+
+    for(let i = 0; i<cantidad; i++){
+
+        var deportista = {
+
+            codigo: busqueda + String(faker.number.int({min:1, max: 20000 })),
+            nombre: faker.person.fullName(),
+
+        }
+
+        listaDeportistas.push(deportista);
+        console.log(deportista);
+
+    }
+
+    res.json({resultados: listaDeportistas});
+
+});
+
 
 router.get('/buscar_usuario', (req, res) => {
 
@@ -211,6 +240,26 @@ router.delete('/eliminar', (req, res) => {
         }
 
         res.json({message: "eliminacion exitosa"});
+
+    });
+
+});
+
+router.get('/deportistas', (req, res) => {
+
+    const query = "SELECT name, code FROM users WHERE rol = 'deportista';"
+
+    connection.query(query, (err, results) => {
+
+        if(err) {
+
+            console.log("error en obtener deportistas: ",err.message);
+            res.status(500).json({message: "error en traer a todos los usuarios"});
+
+        }
+
+        console.log(results);
+        res.json({resultados: results, message: "exito"})
 
     });
 

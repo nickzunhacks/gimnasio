@@ -5,6 +5,7 @@ const authRoutes = require('./routes/authRoutes');
 const pageRoutes = require('./routes/pageRoutes');
 const deportistaRoutes = require('./routes/deportistaRoutes');
 const entrenadorRoutes = require('./routes/entrenadorRoutes');
+const router = require('./routes/authRoutes');
 
 const app = express();
 const PORT = 3000;
