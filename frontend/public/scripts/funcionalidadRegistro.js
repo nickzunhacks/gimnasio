@@ -34,7 +34,7 @@ async function capturarDatosRegistro(event) {
 
         try {
     
-            const response = await fetch('https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/registrar', {
+            const response = await fetch('http://localhost:3000/registrar', {
     
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},

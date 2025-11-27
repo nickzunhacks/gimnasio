@@ -35,6 +35,9 @@ router.get('/agregar', isAuthenticated, isRole('entrenador'), (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/paginasHTML', 'agregarRutina.html'));
 });
 
+router.get('/registrar', isAuthenticated, isRole('deportista'), (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/paginasHTML', 'registro.html'));
+});
 
 
 module.exports = router;

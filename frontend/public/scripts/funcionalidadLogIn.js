@@ -21,7 +21,7 @@ async function iniciarSesion(event) {
 
     try {
 
-      const response = await fetch('https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/login', {
+      const response = await fetch('http://localhost:3000/login', {
 
         method: 'POST',
         headers: {'Content-Type': 'application/json'},

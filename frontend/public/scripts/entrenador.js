@@ -46,7 +46,7 @@ async function resultadosBusqueda(event) {
     
     try {
 
-        const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/buscar_usuario?codigo=${busqueda}`, {
+        const response = await fetch(`http://localhost:3000/buscar_usuario?codigo=${busqueda}`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'},
 
