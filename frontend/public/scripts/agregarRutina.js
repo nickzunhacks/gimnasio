@@ -7,7 +7,7 @@ async function existeRutina() {
 
     try {
 
-        const response = await fetch(`http://localhost:3000/existe_rutina?codigo=${codigo}&dia=${dia}`, {
+        const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/existe_rutina?codigo=${codigo}&dia=${dia}`, {
             method: 'GET',
             headers: {'Content-Type': 'application/json'},
         });
@@ -42,7 +42,7 @@ async function crear() {
 
     try {
 
-        const response = await fetch(`http://localhost:3000/crear`, {
+        const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/crear`, {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(datos),
@@ -116,7 +116,7 @@ async function agregar(idRutina) {
 
         try {
 
-            const response = await fetch(`http://localhost:3000/agregar`, {
+            const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/agregar`, {
 
                 method: "POST",
                 headers: {'Content-Type': 'application/json'},
@@ -150,7 +150,7 @@ async function idRutina(codigo, dia) {
     try{
 
 
-        const response = await fetch(`http://localhost:3000/id_rutina?codigo=${codigo}&dia=${dia}`,{
+        const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/id_rutina?codigo=${codigo}&dia=${dia}`,{
 
             method: "GET",
             headers: {'Content-Type': 'application/json'},
@@ -185,7 +185,9 @@ async function agregarEjercicio() {
 
         if(existe.estado === false) {
 
-        const creacionRutina = await crear();
+            alert("no existe rutina, lo cual se crea");
+
+            const creacionRutina = await crear();
 
             if(creacionRutina.message === "exito"){
 
@@ -196,6 +198,13 @@ async function agregarEjercicio() {
                 console.log("problema al crear la rutina");
 
             }
+
+        } else {
+
+            alert("si existe")
+
+            const nombreRutina = document.querySelector('#nombreRutina');
+            nombreRutina.style.display = "none";
 
         }
 
@@ -239,7 +248,7 @@ async function listaEjercicios(grupoMuscular) {
 
     try {
 
-        const response = await fetch(`http://localhost:3000/ejercicios?grupoMuscular=${grupoMuscular}`, {
+        const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/ejercicios?grupoMuscular=${grupoMuscular}`, {
 
         method: "GET",
         headers: {'Content-Type': 'application/json'},

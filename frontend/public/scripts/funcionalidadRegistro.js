@@ -34,7 +34,7 @@ async function capturarDatosRegistro(event) {
 
         try {
     
-            const response = await fetch('http://localhost:3000/registrar', {
+            const response = await fetch('https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/registrar', {
     
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -48,9 +48,9 @@ async function capturarDatosRegistro(event) {
             formulario.reset();
     
         } catch (err) {
-    
+            
+            alert("este codigo ya esta registrado");
             console.log('Error en el envio de datos:', err);
-            alert('error al registrar el usuario')
     
         }
     }

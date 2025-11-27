@@ -8,7 +8,7 @@ async function rol() {
 
     if (rolCache) return rolCache;
 
-    const response = await fetch(`http://localhost:3000/session_rol`, {
+    const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/session_rol`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'},
     });
@@ -26,7 +26,7 @@ async function idEjercicio(ejercicio) {
     try{
 
 
-        const response = await fetch(`http://localhost:3000/id_ejercicio?nombre=${ejercicio}`,{
+        const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/id_ejercicio?nombre=${ejercicio}`,{
 
             method: "GET",
             headers: {'Content-Type': 'application/json'},
@@ -60,7 +60,7 @@ async function idRutina(codigo, dia) {
     try{
 
 
-        const response = await fetch(`http://localhost:3000/id_rutina?codigo=${codigo}&dia=${dia}`,{
+        const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/id_rutina?codigo=${codigo}&dia=${dia}`,{
 
             method: "GET",
             headers: {'Content-Type': 'application/json'},
@@ -127,7 +127,7 @@ async function crearTarjeta(ejercicio) {
 
             try {
                 
-            const response = await fetch(`http://localhost:3000/eliminar?rutina=${IDrutina}&ejercicio=${IDejercicio}`,{
+            const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/eliminar?rutina=${IDrutina}&ejercicio=${IDejercicio}`,{
                     method: 'DELETE',      
                     headers: {'Content-Type': 'application/json'},
                 });
@@ -178,7 +178,7 @@ async function obtenerRutina() {
 
         if (rol_usuario === "entrenador"){
 
-            respuesta = await fetch(`http://localhost:3000/rutina_dia?dia=${dia}&codigo=${codigo}`, {
+            respuesta = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/rutina_dia?dia=${dia}&codigo=${codigo}`, {
                 method: 'GET',
                 headers: {'Content-Type': 'application/json'},
                 credentials: 'include'
@@ -186,7 +186,7 @@ async function obtenerRutina() {
 
         } else {
 
-            respuesta = await fetch(`http://localhost:3000/rutina_dia?dia=${dia}`, {
+            respuesta = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/rutina_dia?dia=${dia}`, {
                 method: 'GET',
                 headers: {'Content-Type': 'application/json'},
             });
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try{
 
-        const response = await fetch('/api/usuario', {
+        const response = await fetch('https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/api/usuario', {
             method: 'GET',
             credentials: 'include'
         });     

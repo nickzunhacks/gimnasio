@@ -11,6 +11,8 @@ const PORT = 3000;
 
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, '../frontend/public')));
+
 app.use(session({
     secret: 'Lori0203',
     resave: false,
@@ -29,7 +31,6 @@ app.use('/', authRoutes);
 app.use('/', deportistaRoutes);
 app.use('/', entrenadorRoutes);
 
-app.use(express.static(path.join(__dirname, '../frontend/public')));
 
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);

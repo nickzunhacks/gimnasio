@@ -21,7 +21,7 @@ async function iniciarSesion(event) {
 
     try {
 
-      const response = await fetch('http://localhost:3000/login', {
+      const response = await fetch('https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/login', {
 
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -46,9 +46,8 @@ async function iniciarSesion(event) {
       }
 
     } catch(err) {
-
+      
       console.log('error al iniciar sesion: ', err);
-      alert('Error al conectar con el servidor')
 
     }
 
