@@ -55,6 +55,20 @@ input:focus {
 
 }
 
+.peso{
+
+    width: 100px;
+    text-align: center;
+
+}
+
+.reps {
+
+    width: 100px;
+    text-align: center;
+
+}
+
 #datos {
 
     display: flex;
@@ -79,7 +93,6 @@ input:focus {
 
 button {
 
-    margin-top: 50px;
     width: 150px;
     height: 50px;
     border-radius: 50px;
@@ -96,5 +109,50 @@ button:hover {
     filter: blur(0.5px);
     transform: scale(1.05);
     cursor: pointer;
+
+}
+
+.serie {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+#agregar {
+
+    width: min-content;
+    height: min-content;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+#Continuar {
+
+    margin-top: 50px;
+
+}
+
+p {
+
+    color: #004aad;
+    font-weight: 900;
+
+}
+
+.descanso {
+
+    width: 100px;
+
+}
+
+#comentario {
+
+    margin-top: 50px;
+    height: 100px;
 
 }

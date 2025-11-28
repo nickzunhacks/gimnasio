@@ -1,5 +1,4 @@
 let rolCache = null;
-
 const parametros = new URLSearchParams(window.location.search);
 const codigo = parametros.get('codigo')
 const dia = parametros.get('dia');
@@ -106,6 +105,7 @@ async function crearTarjeta(ejercicio) {
 
         clon.querySelector("#editar").style.visibility = "visible";
         clon.querySelector("#eliminar").style.visibility = "visible";
+        clon.querySelector("#registrar").style.visibility = "hidden";
 
         const editar = clon.querySelector("#editar");
         const eliminar = clon.querySelector("#eliminar");
@@ -153,6 +153,28 @@ async function crearTarjeta(ejercicio) {
             });
 
     }
+
+    // agregamos al boton de registrar el listener que envia por url el nombre del ejericio e id
+
+    const registrar = clon.querySelector("#registrar");
+
+    registrar.addEventListener("click", async() => {
+
+        const ejercicioid = await idEjercicio(ejercicio.nombre);
+        window.location.href = `/registrar?nombre=${ejercicio.nombre}&id=${ejercicioid}&dia=${dia}`;   
+
+    });
+
+    // agregamos al boton de progreso el listener 
+
+    const progreso = clon.querySelector("#progreso");
+
+    progreso.addEventListener("click", async() => {
+
+        const ejercicioid = await idEjercicio(ejercicio.nombre);
+        window.location.href = `/progreso?nombre=${ejercicio.nombre}&id=${ejercicioid}&codigo=${codigo}&dia=${dia}`;
+
+    });
 
     // en cada ejercicio, se le agrega video, titulo, peso, reps, serie y descanso de cada ejercicio rescatado segun el dia 
 

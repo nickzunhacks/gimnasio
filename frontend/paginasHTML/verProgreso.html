@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>progreso</title>
+    <link rel="stylesheet" href="styles/verProgreso.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+</head>
+<body>
+
+    <div id="contenedorTituloPrincipal">
+        <h1 id="tituloPrincipal">progreso page</h1>
+    </div>
+    
+    <div id="contenedorGrafica">
+        <canvas id="grafica"></canvas>
+    </div>
+
+    <div id="registro">
+
+        <div id="scroll">
+        
+            <div class="row">
+                <div class="encabezados">Fecha</div>
+                <div class="encabezados">Peso</div>
+                <div class="encabezados">Reps</div>
+                <div class="encabezados">Series</div>
+                <div class="encabezados">Descanso</div>
+            </div>
+        
+        </div>
+
+    </div>
+
+    <button id="salir">Salir</button>
+
+    <template id="plantilla-registros">
+
+        <div class="row">
+            <div class="datos fecha">Fecha</div>
+            <div class="datos peso">Peso</div>
+            <div class="datos reps">Reps</div>
+            <div class="datos series">Series</div>
+            <div class="datos descanso">Descanso</div>
+        </div>
+
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts/verProgreso.js"></script>
+    
+</body>
+</html>

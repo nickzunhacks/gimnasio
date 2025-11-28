@@ -39,5 +39,9 @@ router.get('/registrar', isAuthenticated, isRole('deportista'), (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/paginasHTML', 'registro.html'));
 });
 
+router.get('/progreso', isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/paginasHTML', 'verProgreso.html'));
+});
+
 
 module.exports = router;

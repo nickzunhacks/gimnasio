@@ -17,21 +17,40 @@
         <h2 id="nombreEjercicio">ejercicio</h2>
     </div>
 
+    <template id="plantilla-registro">
+
+        <input class="descanso" type="number" placeholder="descanso" required>
+
+        <div class="serie">
+            <p id="numeroSerie">serie 1</p>
+            <input class="peso" type="number" placeholder="peso" required>
+            <input class="reps" type="number" placeholder="reps" required>
+        </div>
+
+    </template>
+
     <form id="formulario">
 
         <div id="datos">
-
-            <input type="text" placeholder="peso" required>
-            <input type="text" placeholder="reps" required>
-            <input type="text" placeholder="series" required>
-            <input type="text" placeholder="descanso" required>
-            <input type="date" placeholder="fecha" required>
+            
+            <div class="serie">
+                <p id="1">serie 1</p>
+                <input class="peso" type="number" placeholder="peso" required>
+                <input class="reps" type="number" placeholder="reps" required>
+            </div>
 
         </div>
+
+            <button id="agregar">+</button>
+
+            <input id="fecha" type="date" placeholder="fecha" required>
+            <input id="comentario" type="text" placeholder="comentario">
         
-        <button type="submit">Continuar</button>
+        <button id="Continuar" type="submit">Continuar</button>
 
     </form>
+
+    <script src="scripts/registroEjercicio.js"></script>
 
 </body>
 </html>

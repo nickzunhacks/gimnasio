@@ -56,4 +56,56 @@ router.get('/rutina_dia', (req, res) => {
 
 });
 
+router.post('/registrar_ejercicio', (req, res) => {
+
+    const {peso, reps, series, descanso, fecha, comentario, idEjercicio} = req.body;
+    const codigoUsuario = req.session.user.code;
+    
+    const query = "INSERT INTO rutina_registro VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    connection.query(query, [idEjercicio, codigoUsuario, peso, reps, series, descanso, fecha, comentario], (err, results) => {
+
+        if (err) { 
+
+            console.log("error al insertar desempeno de ejercicio: ", err.message);
+            res.status(500).json({ message: 'Error al registrar entrenamiento'});
+            return;
+        }
+
+        console.log(results);
+        res.json({message: "exito al registrar entrenamiento"})
+
+    });
+
+});
+
+router.get('/mostrar_progreso', (req,res) => {
+
+    const idEjercicio= req.query.idEjercicio;
+    const rol = req.session.user.rol;
+    let codigo = null;
+    if (rol === "entrenador") {
+        codigo = req.query.codigo 
+    } else {
+        codigo = req.session.user.code;
+    }
+    
+    console.log(idEjercicio, codigo);
+
+    const query = 'SELECT * FROM `rutina_registro` WHERE id_ejercicio = ? AND id_deportista = ?';
+
+    connection.query(query, [idEjercicio, codigo], (err, results) => {
+
+        if (err) { 
+            console.log("error al obtener desempeno de ejercicio: ", err.message);
+            res.status(500).json({ message: 'Error al obtener entrenamiento'});
+            return;
+        }
+        console.log(results);
+        res.json(results);
+
+    });
+
+})
+
 module.exports = router;
