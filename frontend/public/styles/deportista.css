@@ -196,3 +196,24 @@ h1{ font-weight: 100; }
     cursor: pointer;
 
 }
+
+.boton-deportista {
+
+    align-self: flex-end;
+    font-family: 'montserrat';
+    font-weight: 700;
+    border-radius: 10px;
+    border-color: black;
+    cursor: pointer;
+
+}
+
+#progreso {align-self: flex-start}
+
+#botones-abajo{
+    
+    display: flex;
+    width: max-content;
+    gap: 1300px;
+
+}

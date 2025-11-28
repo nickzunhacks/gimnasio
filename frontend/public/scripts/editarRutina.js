@@ -8,7 +8,7 @@ async function idEjercicio(ejercicio) {
     try{
 
 
-        const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/id_ejercicio?nombre=${ejercicio}`,{
+        const response = await fetch(`http://localhost:3000/id_ejercicio?nombre=${ejercicio}`,{
 
             method: "GET",
             headers: {'Content-Type': 'application/json'},
@@ -40,7 +40,7 @@ async function idRutina(codigo, dia) {
     try{
 
 
-        const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/id_rutina?codigo=${codigo}&dia=${dia}`,{
+        const response = await fetch(`http://localhost:3000/id_rutina?codigo=${codigo}&dia=${dia}`,{
 
             method: "GET",
             headers: {'Content-Type': 'application/json'},
@@ -98,7 +98,7 @@ async function editar(event) {
 
     try {
 
-        const response = await fetch('https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/editar',{
+        const response = await fetch('http://localhost:3000/editar',{
 
             method: "POST",
             headers: {'Content-Type': 'application/json'},

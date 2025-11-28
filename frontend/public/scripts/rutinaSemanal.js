@@ -4,7 +4,7 @@ async function rol() {
 
     if (rolCache) return rolCache;
 
-    const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/session_rol`, {
+    const response = await fetch(`http://localhost:3000/session_rol`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'},
     });

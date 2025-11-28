@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="styles/registro.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+</head>
+<body>
+    
+    <div id="contenedorTitulo">
+        <h1 id="tituloPrincipal">Registro de ejercicio</h1>
+    </div>
+
+    <div id="contenedorTituloEjercicio">
+        <h2 id="nombreEjercicio">ejercicio</h2>
+    </div>
+
+    <template id="plantilla-registro">
+
+        <input class="descanso" type="number" placeholder="descanso" required>
+
+        <div class="serie">
+            <p id="numeroSerie">serie 1</p>
+            <input class="peso" type="number" placeholder="peso" required>
+            <input class="reps" type="number" placeholder="reps" required>
+        </div>
+
+    </template>
+
+    <form id="formulario">
+
+        <div id="datos">
+            
+            <div class="serie">
+                <p id="1">serie 1</p>
+                <input class="peso" type="number" placeholder="peso" required>
+                <input class="reps" type="number" placeholder="reps" required>
+            </div>
+
+        </div>
+
+            <button id="agregar">+</button>
+
+            <input id="fecha" type="date" placeholder="fecha" required>
+            <input id="comentario" type="text" placeholder="comentario">
+        
+        <button id="Continuar" type="submit">Continuar</button>
+
+    </form>
+
+    <script src="scripts/registroEjercicio.js"></script>
+
+</body>
+</html>

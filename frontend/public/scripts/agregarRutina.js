@@ -7,7 +7,7 @@ async function existeRutina() {
 
     try {
 
-        const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/existe_rutina?codigo=${codigo}&dia=${dia}`, {
+        const response = await fetch(`http://localhost:3000/existe_rutina?codigo=${codigo}&dia=${dia}`, {
             method: 'GET',
             headers: {'Content-Type': 'application/json'},
         });
@@ -42,7 +42,7 @@ async function crear() {
 
     try {
 
-        const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/crear`, {
+        const response = await fetch(`http://localhost:3000/crear`, {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(datos),
@@ -116,7 +116,7 @@ async function agregar(idRutina) {
 
         try {
 
-            const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/agregar`, {
+            const response = await fetch(`http://localhost:3000/agregar`, {
 
                 method: "POST",
                 headers: {'Content-Type': 'application/json'},
@@ -150,7 +150,7 @@ async function idRutina(codigo, dia) {
     try{
 
 
-        const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/id_rutina?codigo=${codigo}&dia=${dia}`,{
+        const response = await fetch(`http://localhost:3000/id_rutina?codigo=${codigo}&dia=${dia}`,{
 
             method: "GET",
             headers: {'Content-Type': 'application/json'},
@@ -248,7 +248,7 @@ async function listaEjercicios(grupoMuscular) {
 
     try {
 
-        const response = await fetch(`https://gym-aka6fvgwfkbxbmh4.mexicocentral-01.azurewebsites.net/ejercicios?grupoMuscular=${grupoMuscular}`, {
+        const response = await fetch(`http://localhost:3000/ejercicios?grupoMuscular=${grupoMuscular}`, {
 
         method: "GET",
         headers: {'Content-Type': 'application/json'},
